@@ -1,0 +1,17 @@
+.git
+**/__pycache__
+*.pyc
+.lab
+.venv
+.release-work
+.dependency-resolution.json
+dist
+**/*.egg-info
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite*
+*.backup

@@ -1,0 +1,43 @@
+test_cli_full_lifecycle_without_saas_with_independent_backups (test_clients.IndependentClient.test_cli_full_lifecycle_without_saas_with_independent_backups) ... ok
+test_fixed_fixture_bytes_regenerate_deterministically (test_clients.IndependentClient.test_fixed_fixture_bytes_regenerate_deterministically) ... ok
+test_installed_library_operates_without_checkout_on_python_path (test_clients.IndependentClient.test_installed_library_operates_without_checkout_on_python_path) ... ok
+test_no_research_saas_or_porternet_dependency (test_clients.IndependentClient.test_no_research_saas_or_porternet_dependency) ... ok
+test_portable_command_and_restart_scenarios (test_lifecycle_vectors.PortableLifecycle.test_portable_command_and_restart_scenarios) ... ok
+test_alpha_distribution_version_consistent (test_release.Release.test_alpha_distribution_version_consistent) ... ok
+test_approved_runtime_and_wire_artifacts_unchanged (test_release.Release.test_approved_runtime_and_wire_artifacts_unchanged) ... ok
+test_public_schema_matches_valid_fixtures_and_verifier_results (test_release.Release.test_public_schema_matches_valid_fixtures_and_verifier_results) ... ok
+test_stateful_fixture_generator_reproduces_published_bytes (test_release.Release.test_stateful_fixture_generator_reproduces_published_bytes) ... ok
+test_actual_limit_warning_rejection_last_terminal_slot (test_solo.Capacity.test_actual_limit_warning_rejection_last_terminal_slot) ... ok
+test_authenticated_forks_are_detectable_only_with_retained_anchors (test_solo.Solo.test_authenticated_forks_are_detectable_only_with_retained_anchors) ... ok
+test_before_and_after_commit_process_death (test_solo.Solo.test_before_and_after_commit_process_death) ... ok
+test_capsule_policy_cannot_be_amended_at_existing_id (test_solo.Solo.test_capsule_policy_cannot_be_amended_at_existing_id) ... ok
+test_cli_lost_acceptance_response_retries_exact_pending_command (test_solo.Solo.test_cli_lost_acceptance_response_retries_exact_pending_command) ... ok
+test_cli_rejects_valid_receipt_for_another_request (test_solo.Solo.test_cli_rejects_valid_receipt_for_another_request) ... ok
+test_clock_forward_backward_and_restart_health (test_solo.Solo.test_clock_forward_backward_and_restart_health) ... ok
+test_competing_disarm_release_have_one_terminal_winner (test_solo.Solo.test_competing_disarm_release_have_one_terminal_winner) ... ok
+test_competing_independent_release_workers (test_solo.Solo.test_competing_independent_release_workers) ... ok
+test_disarm_after_eligibility_and_after_commit (test_solo.Solo.test_disarm_after_eligibility_and_after_commit) ... ok
+test_https_and_file_transport_same_receipts_and_decision (test_solo.Solo.test_https_and_file_transport_same_receipts_and_decision) ... ok
+test_https_untrusted_certificate_cannot_supply_a_receipt (test_solo.Solo.test_https_untrusted_certificate_cannot_supply_a_receipt) ... ok
+test_inclusive_grace_and_late_checkin (test_solo.Solo.test_inclusive_grace_and_late_checkin) ... ok
+test_lost_checkin_ack_after_process_commit_recovers_receipt (test_solo.Solo.test_lost_checkin_ack_after_process_commit_recovers_receipt) ... ok
+test_lost_https_export_response_and_repeated_export (test_solo.Solo.test_lost_https_export_response_and_repeated_export) ... ok
+test_missing_authority_is_not_implicitly_reinitialized (test_solo.Solo.test_missing_authority_is_not_implicitly_reinitialized) ... ok
+test_operator_early_decryption_remains_successful (test_solo.Solo.test_operator_early_decryption_remains_successful) ... ok
+test_portable_corpus_matches_python_and_php (test_solo.Solo.test_portable_corpus_matches_python_and_php) ... ok
+test_provider_does_not_silently_claim_stronger_custody (test_solo.Solo.test_provider_does_not_silently_claim_stronger_custody) ... ok
+test_receipt_loss_duplicates_id_conflicts_and_stale_basis (test_solo.Solo.test_receipt_loss_duplicates_id_conflicts_and_stale_basis) ... ok
+test_release_terminal_and_exact_repeated_exports (test_solo.Solo.test_release_terminal_and_exact_repeated_exports) ... ok
+test_snapshot_challenge_anchors_and_clock_unavailability (test_solo.Solo.test_snapshot_challenge_anchors_and_clock_unavailability) ... ok
+test_stale_worker_snapshot_cannot_override_accepted_checkin (test_solo.Solo.test_stale_worker_snapshot_cannot_override_accepted_checkin) ... ok
+test_strict_point_validation_rejects_mixed_subgroups_in_both_backends (test_solo.Solo.test_strict_point_validation_rejects_mixed_subgroups_in_both_backends) ... ok
+test_synthetic_backups_restore_original_creator_and_recipient (test_solo.Solo.test_synthetic_backups_restore_original_creator_and_recipient) ... ok
+test_torn_uncommitted_wal_rolls_back_and_corrupt_commit_fails_closed (test_solo.Solo.test_torn_uncommitted_wal_rolls_back_and_corrupt_commit_fails_closed) ... ok
+test_unhealthy_clock_allows_only_disarm_and_receipt_recovery (test_solo.Solo.test_unhealthy_clock_allows_only_disarm_and_receipt_recovery) ... ok
+test_wrong_creator_cannot_reset_and_stolen_key_retains_authority (test_solo.Solo.test_wrong_creator_cannot_reset_and_stolen_key_retains_authority) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 42.338s
+
+OK
+{"cases":88,"disagreements":0,"failures":[]}

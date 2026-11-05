@@ -1,0 +1,787 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:otherwise:solo:v1:schema",
+  "title": "Otherwise Solo wire objects (validation aid)",
+  "description": "Canonical bytes, spare base64 bits, signatures, size/depth and lifecycle constraints require the normative verifier. This schema alone cannot authorize release.",
+  "$defs": {
+    "descriptor_body": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "const": "otherwise.solo.v1"
+        },
+        "v": {
+          "const": 1
+        },
+        "suite": {
+          "const": "ed25519-sha256-aes256gcm-sodiumseal-v1"
+        },
+        "kind": {
+          "const": "descriptor"
+        },
+        "capsule_id": {
+          "type": "string",
+          "minLength": 22,
+          "maxLength": 22,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "creator_key": {
+          "type": "string",
+          "minLength": 43,
+          "maxLength": 43,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "custodian_key": {
+          "type": "string",
+          "minLength": 43,
+          "maxLength": 43,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "custodian_box_key": {
+          "type": "string",
+          "minLength": 43,
+          "maxLength": 43,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "recipient_key": {
+          "type": "string",
+          "minLength": 43,
+          "maxLength": 43,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "interval": {
+          "type": "integer",
+          "minimum": 60,
+          "maximum": 31536000
+        },
+        "grace": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2592000
+        },
+        "nonce": {
+          "type": "string",
+          "minLength": 16,
+          "maxLength": 16,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "ciphertext_hash": {
+          "type": "string",
+          "minLength": 43,
+          "maxLength": 43,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "ciphertext_size": {
+          "type": "integer",
+          "minimum": 16,
+          "maximum": 1048592
+        }
+      },
+      "required": [
+        "profile",
+        "v",
+        "suite",
+        "kind",
+        "capsule_id",
+        "creator_key",
+        "custodian_key",
+        "custodian_box_key",
+        "recipient_key",
+        "interval",
+        "grace",
+        "nonce",
+        "ciphertext_hash",
+        "ciphertext_size"
+      ],
+      "additionalProperties": false
+    },
+    "descriptor": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/$defs/descriptor_body"
+        },
+        "signature": {
+          "type": "string",
+          "minLength": 86,
+          "maxLength": 86,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        }
+      },
+      "required": [
+        "body",
+        "signature"
+      ],
+      "additionalProperties": false
+    },
+    "command_body": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "profile": {
+              "const": "otherwise.solo.v1"
+            },
+            "v": {
+              "const": 1
+            },
+            "suite": {
+              "const": "ed25519-sha256-aes256gcm-sodiumseal-v1"
+            },
+            "kind": {
+              "const": "command"
+            },
+            "capsule_id": {
+              "type": "string",
+              "minLength": 22,
+              "maxLength": 22,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "descriptor_hash": {
+              "type": "string",
+              "minLength": 43,
+              "maxLength": 43,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "request_id": {
+              "type": "string",
+              "minLength": 22,
+              "maxLength": 22,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "action": {
+              "const": "ARM"
+            },
+            "basis": {
+              "type": "null"
+            },
+            "enrollment_box": {
+              "type": "string",
+              "minLength": 150,
+              "maxLength": 150,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            }
+          },
+          "required": [
+            "profile",
+            "v",
+            "suite",
+            "kind",
+            "capsule_id",
+            "descriptor_hash",
+            "request_id",
+            "action",
+            "basis",
+            "enrollment_box"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "profile": {
+              "const": "otherwise.solo.v1"
+            },
+            "v": {
+              "const": 1
+            },
+            "suite": {
+              "const": "ed25519-sha256-aes256gcm-sodiumseal-v1"
+            },
+            "kind": {
+              "const": "command"
+            },
+            "capsule_id": {
+              "type": "string",
+              "minLength": 22,
+              "maxLength": 22,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "descriptor_hash": {
+              "type": "string",
+              "minLength": 43,
+              "maxLength": 43,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "request_id": {
+              "type": "string",
+              "minLength": 22,
+              "maxLength": 22,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "action": {
+              "const": "CHECKIN"
+            },
+            "basis": {
+              "type": "string",
+              "minLength": 43,
+              "maxLength": 43,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            }
+          },
+          "required": [
+            "profile",
+            "v",
+            "suite",
+            "kind",
+            "capsule_id",
+            "descriptor_hash",
+            "request_id",
+            "action",
+            "basis"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "profile": {
+              "const": "otherwise.solo.v1"
+            },
+            "v": {
+              "const": 1
+            },
+            "suite": {
+              "const": "ed25519-sha256-aes256gcm-sodiumseal-v1"
+            },
+            "kind": {
+              "const": "command"
+            },
+            "capsule_id": {
+              "type": "string",
+              "minLength": 22,
+              "maxLength": 22,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "descriptor_hash": {
+              "type": "string",
+              "minLength": 43,
+              "maxLength": 43,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "request_id": {
+              "type": "string",
+              "minLength": 22,
+              "maxLength": 22,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "action": {
+              "const": "DISARM"
+            },
+            "basis": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "profile",
+            "v",
+            "suite",
+            "kind",
+            "capsule_id",
+            "descriptor_hash",
+            "request_id",
+            "action",
+            "basis"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "command": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/$defs/command_body"
+        },
+        "signature": {
+          "type": "string",
+          "minLength": 86,
+          "maxLength": 86,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        }
+      },
+      "required": [
+        "body",
+        "signature"
+      ],
+      "additionalProperties": false
+    },
+    "event_body": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "const": "otherwise.solo.v1"
+        },
+        "v": {
+          "const": 1
+        },
+        "suite": {
+          "const": "ed25519-sha256-aes256gcm-sodiumseal-v1"
+        },
+        "kind": {
+          "const": "event"
+        },
+        "capsule_id": {
+          "type": "string",
+          "minLength": 22,
+          "maxLength": 22,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "descriptor_hash": {
+          "type": "string",
+          "minLength": 43,
+          "maxLength": 43,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000
+        },
+        "previous": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 43,
+              "maxLength": 43,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "at": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "clock": {
+          "enum": [
+            "trusted",
+            "held"
+          ]
+        },
+        "action": {
+          "enum": [
+            "ARM",
+            "CHECKIN",
+            "DISARM",
+            "RELEASE"
+          ]
+        },
+        "command": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/command"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "release_box": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 150,
+              "maxLength": 150,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "profile",
+        "v",
+        "suite",
+        "kind",
+        "capsule_id",
+        "descriptor_hash",
+        "seq",
+        "previous",
+        "at",
+        "clock",
+        "action",
+        "command",
+        "release_box"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "RELEASE"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "command": {
+                "type": "null"
+              },
+              "release_box": {
+                "type": "string",
+                "minLength": 150,
+                "maxLength": 150,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "clock": {
+                "const": "trusted"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "release_box": {
+                "type": "null"
+              },
+              "command": {
+                "$ref": "#/$defs/command"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "event": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/$defs/event_body"
+        },
+        "signature": {
+          "type": "string",
+          "minLength": 86,
+          "maxLength": 86,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        }
+      },
+      "required": [
+        "body",
+        "signature"
+      ],
+      "additionalProperties": false
+    },
+    "snapshot_body": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "const": "otherwise.solo.v1"
+        },
+        "v": {
+          "const": 1
+        },
+        "suite": {
+          "const": "ed25519-sha256-aes256gcm-sodiumseal-v1"
+        },
+        "kind": {
+          "const": "snapshot"
+        },
+        "capsule_id": {
+          "type": "string",
+          "minLength": 22,
+          "maxLength": 22,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "descriptor_hash": {
+          "type": "string",
+          "minLength": 43,
+          "maxLength": 43,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "challenge": {
+          "type": "string",
+          "minLength": 43,
+          "maxLength": 43,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "head": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 43,
+              "maxLength": 43,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sampled_at": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "clock": {
+          "enum": [
+            "trusted",
+            "unavailable"
+          ]
+        },
+        "events": {
+          "type": "array",
+          "maxItems": 10000,
+          "items": {
+            "$ref": "#/$defs/event"
+          }
+        }
+      },
+      "required": [
+        "profile",
+        "v",
+        "suite",
+        "kind",
+        "capsule_id",
+        "descriptor_hash",
+        "challenge",
+        "head",
+        "sampled_at",
+        "clock",
+        "events"
+      ],
+      "additionalProperties": false
+    },
+    "snapshot": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/$defs/snapshot_body"
+        },
+        "signature": {
+          "type": "string",
+          "minLength": 86,
+          "maxLength": 86,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        }
+      },
+      "required": [
+        "body",
+        "signature"
+      ],
+      "additionalProperties": false
+    },
+    "inspect": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "const": "otherwise.solo.v1"
+        },
+        "v": {
+          "const": 1
+        },
+        "suite": {
+          "const": "ed25519-sha256-aes256gcm-sodiumseal-v1"
+        },
+        "kind": {
+          "const": "inspect"
+        },
+        "capsule_id": {
+          "type": "string",
+          "minLength": 22,
+          "maxLength": 22,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "descriptor_hash": {
+          "type": "string",
+          "minLength": 43,
+          "maxLength": 43,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "challenge": {
+          "type": "string",
+          "minLength": 43,
+          "maxLength": 43,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        }
+      },
+      "required": [
+        "profile",
+        "v",
+        "suite",
+        "kind",
+        "capsule_id",
+        "descriptor_hash",
+        "challenge"
+      ],
+      "additionalProperties": false
+    },
+    "archive": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "const": "otherwise.solo.v1"
+        },
+        "v": {
+          "const": 1
+        },
+        "suite": {
+          "const": "ed25519-sha256-aes256gcm-sodiumseal-v1"
+        },
+        "kind": {
+          "const": "archive"
+        },
+        "descriptor": {
+          "$ref": "#/$defs/descriptor"
+        },
+        "ciphertext": {
+          "type": "string",
+          "maxLength": 1398123,
+          "pattern": "^[A-Za-z0-9_-]*$"
+        },
+        "events": {
+          "type": "array",
+          "maxItems": 10000,
+          "items": {
+            "$ref": "#/$defs/event"
+          }
+        }
+      },
+      "required": [
+        "profile",
+        "v",
+        "suite",
+        "kind",
+        "descriptor",
+        "ciphertext",
+        "events"
+      ],
+      "additionalProperties": false
+    },
+    "verification": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "const": "otherwise.solo.v1"
+        },
+        "v": {
+          "const": 1
+        },
+        "suite": {
+          "const": "ed25519-sha256-aes256gcm-sodiumseal-v1"
+        },
+        "kind": {
+          "const": "verification"
+        },
+        "descriptor_hash": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 43,
+              "maxLength": 43,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "verdict": {
+          "enum": [
+            "VALID",
+            "INVALID",
+            "INCOMPLETE",
+            "UNSUPPORTED"
+          ]
+        },
+        "state": {
+          "enum": [
+            "UNARMED",
+            "ARMED",
+            "GRACE",
+            "ELIGIBLE",
+            "DISARMED",
+            "COMMITTED",
+            "UNKNOWN"
+          ]
+        },
+        "head": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 43,
+              "maxLength": 43,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "authorization": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "content": {
+          "enum": [
+            "NOT_ATTEMPTED",
+            "DECRYPTED",
+            "FAILED"
+          ]
+        },
+        "freshness": {
+          "enum": [
+            "HISTORICAL",
+            "SAMPLED",
+            "UNKNOWN"
+          ]
+        },
+        "code": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "profile",
+        "v",
+        "suite",
+        "kind",
+        "descriptor_hash",
+        "verdict",
+        "state",
+        "head",
+        "authorization",
+        "content",
+        "freshness",
+        "code"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/descriptor"
+    },
+    {
+      "$ref": "#/$defs/command"
+    },
+    {
+      "$ref": "#/$defs/event"
+    },
+    {
+      "$ref": "#/$defs/snapshot"
+    },
+    {
+      "$ref": "#/$defs/inspect"
+    },
+    {
+      "$ref": "#/$defs/archive"
+    },
+    {
+      "$ref": "#/$defs/verification"
+    }
+  ]
+}

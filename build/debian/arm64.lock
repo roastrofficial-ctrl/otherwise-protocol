@@ -1,0 +1,22 @@
+# Exact .deb downloads resolved from signed Debian metadata; filename sha256 url
+ca-certificates_20250419~deb12u2_all.deb b9f76b5271a7ac373fd5e7e1b5b826a71ddd702b42a0d104955ecb1acfffc94b http://deb.debian.org/debian-security/pool/updates/main/c/ca-certificates/ca-certificates_20250419%7edeb12u2_all.deb
+libargon2-1_0~20171227-0.3+deb12u1_arm64.deb a578aff3a7704058105b9cfed8ca3c8be2e5975c804d23c19191a9822b57fef3 http://deb.debian.org/debian/pool/main/a/argon2/libargon2-1_0%7e20171227-0.3%2bdeb12u1_arm64.deb
+libbsd0_0.11.7-2_arm64.deb ef00f132ddd268ee67d756998723ee18543db27ab34930c0a9f1cff75cf55382 http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd0_0.11.7-2_arm64.deb
+libedit2_3.1-20221030-2_arm64.deb 6ca1e355586ebfcfe8122b4d317fcaad4a9a10ca455c6a9bbd36f55bf4be85d3 http://deb.debian.org/debian/pool/main/libe/libedit/libedit2_3.1-20221030-2_arm64.deb
+libicu72_72.1-3+deb12u1_arm64.deb 4f5d892fd81110435e45ed0a5f1b12899d7ff989d51db283cbc043f5631646d8 http://deb.debian.org/debian/pool/main/i/icu/libicu72_72.1-3%2bdeb12u1_arm64.deb
+libmagic-mgc_1%3a5.44-3_arm64.deb ff57ca94d3c1231b16d10587e60a2cf6c53b53249879235c59fa0b19e832974c http://deb.debian.org/debian/pool/main/f/file/libmagic-mgc_5.44-3_arm64.deb
+libmagic1_1%3a5.44-3_arm64.deb 2fbaa1e2efdb80cf20cb13b2c523e82602c117cf5ec922c6d1d4ce6e18440052 http://deb.debian.org/debian/pool/main/f/file/libmagic1_5.44-3_arm64.deb
+libsodium23_1.0.18-1+deb12u1_arm64.deb 9ba45ca22ac46604f1ac2a48cd1dc9f38f8e72bcd84e51f65be2c89400017d7d http://deb.debian.org/debian/pool/main/libs/libsodium/libsodium23_1.0.18-1%2bdeb12u1_arm64.deb
+libssl3_3.0.22-1~deb12u2_arm64.deb 3d04ecd8d0f57fed50d205abaeedfcc84c1960073ea085719c00add44b0ccd7f http://deb.debian.org/debian-security/pool/updates/main/o/openssl/libssl3_3.0.22-1%7edeb12u2_arm64.deb
+libxml2_2.9.14+dfsg-1.3~deb12u6_arm64.deb 0bc00975e459387535a4bbabe98a398f0e77c9ab82474face18d01ae8ed0dae4 http://deb.debian.org/debian/pool/main/libx/libxml2/libxml2_2.9.14%2bdfsg-1.3%7edeb12u6_arm64.deb
+media-types_10.0.0_all.deb aaa46dcb3b39948ae2e0fdb72cfcb2f48c0b59f19785a3da8045c05eb19955dd http://deb.debian.org/debian/pool/main/m/media-types/media-types_10.0.0_all.deb
+openssl_3.0.22-1~deb12u2_arm64.deb 416af916dd59f08e996ec887acf3d267039169ef40ee4d38b44829b5ec3e92a4 http://deb.debian.org/debian-security/pool/updates/main/o/openssl/openssl_3.0.22-1%7edeb12u2_arm64.deb
+php-cli_2%3a8.2+93_all.deb dac7619c999e7c08c1a13f3049d4e0a3643a91e8c5f660caead21ade12da03db http://deb.debian.org/debian/pool/main/p/php-defaults/php-cli_8.2%2b93_all.deb
+php-common_2%3a93_all.deb 91f4c80b289c3ae8fd85cb1fe607c71cd6a8572ecd4e5debed2fdbc971a7ae74 http://deb.debian.org/debian/pool/main/p/php-defaults/php-common_93_all.deb
+php8.2-cli_8.2.35-1~deb12u1_arm64.deb 3fdb35ddec517cd3ace129af6baad034bca79903939aec1c544775b398ac1f12 http://deb.debian.org/debian-security/pool/updates/main/p/php8.2/php8.2-cli_8.2.35-1%7edeb12u1_arm64.deb
+php8.2-common_8.2.35-1~deb12u1_arm64.deb 2998d3fd16877b429a1edcacc55e29fe6ea8255ac0eb7b0c119d28e1a0fa6f8b http://deb.debian.org/debian-security/pool/updates/main/p/php8.2/php8.2-common_8.2.35-1%7edeb12u1_arm64.deb
+php8.2-opcache_8.2.35-1~deb12u1_arm64.deb dc5f559d60bc4cc21e729bc294e72c2b5be18eaf1e9071f05cbf941e8e9a5d45 http://deb.debian.org/debian-security/pool/updates/main/p/php8.2/php8.2-opcache_8.2.35-1%7edeb12u1_arm64.deb
+php8.2-readline_8.2.35-1~deb12u1_arm64.deb a632e28579a98ee5ebfdeaea5c860af1ef4fd9bf708ee1c0703ce502240131a9 http://deb.debian.org/debian-security/pool/updates/main/p/php8.2/php8.2-readline_8.2.35-1%7edeb12u1_arm64.deb
+psmisc_23.6-1_arm64.deb 45d6f5d377c40ccb8a7542fc6333aa81cefa6889fc7d75213043317936e09933 http://deb.debian.org/debian/pool/main/p/psmisc/psmisc_23.6-1_arm64.deb
+sensible-utils_0.0.17+nmu1_all.deb e0e66f783996ec4670ed5041c446160ec671c723d4be47d3bc27af93c2958a76 http://deb.debian.org/debian/pool/main/s/sensible-utils/sensible-utils_0.0.17%2bnmu1_all.deb
+ucf_3.0043+nmu1+deb12u1_all.deb 928f2d5d327ef0f8d1b9c03a506134f56564cd2acf3e9f041df3dbdc68b00525 http://deb.debian.org/debian/pool/main/u/ucf/ucf_3.0043%2bnmu1%2bdeb12u1_all.deb

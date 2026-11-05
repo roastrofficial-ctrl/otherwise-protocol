@@ -1,0 +1,25 @@
+.lab/
+__pycache__/
+*.pyc
+*.sqlite*
+*.backup
+
+# Local configuration and private capabilities are never repository content.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.seed
+*.ovault*
+
+# Build outputs and release-tool scratch files.
+.venv/
+dist/
+build/lib/
+build/bdist.*/
+*.egg-info/
+.dependency-resolution.json
+.release-work/

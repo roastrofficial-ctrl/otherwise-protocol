@@ -1,0 +1,19 @@
+{
+  "baseline": "approved Solo v0.1 reference and fixture bytes before release engineering",
+  "sha256": {
+    "conformance/lifecycle.json": "ea2d1b77ad65463b3ef5b9c3a194a7535732f4e6a4b0246f878035f85a44de51",
+    "conformance/vectors.json": "ce4702f106086d733b48795fe9f1bcf06f194b18ae6b1671fc51959e33f1f2ab",
+    "reference/php/verifier.php": "5dfc95737f0363dbae48cf7d6ad22c7c5e2902717bcc2f458212a53ea0f0c4dd",
+    "reference/python/otherwise_solo/backup.py": "8fabc03874a3af6241c174f045db07d229fc71ea8aa1096e4a3576e442e0ad0d",
+    "reference/python/otherwise_solo/cli.py": "31fb8d50745f1d8b596ed1cb654219c9cd80b6ff8543c04174ca2da65896af88",
+    "reference/python/otherwise_solo/client.py": "f0366833d875e71648473faeee3620339eaecafbbabb526a5333960652227173",
+    "reference/python/otherwise_solo/codec.py": "2c50864cc02682504bff8f9a36499509f238046d9647e2b66496f3fa020e3713",
+    "reference/python/otherwise_solo/crypto.py": "212774fc18358456f19245e31b77825bc29741cd9b8ae792d57224e3c54658d7",
+    "reference/python/otherwise_solo/dispatch.py": "4fd6f143f3fe39fc1790a716df1c77d1778925e1e732844f5aabda3fbe8f6572",
+    "reference/python/otherwise_solo/protocol.py": "1c14237b3ca4fbdea5bcb33b479dc2ae4454c17167903efaafb9c6f25eef92a4",
+    "reference/python/otherwise_solo/server.py": "2d7dc2d88bd9e365d3c4c26c7770526153c8a6f82741cc7e92d198a2f89abff4",
+    "reference/python/otherwise_solo/store.py": "3034e15a1770c7437c2a485d3e217cafc09655dae1ef3ee5e8bd3ae1eea09286",
+    "reference/python/otherwise_solo/transport.py": "6f07461e9c838f9e2df87b21c156a900331a319992327bcaa15c5d0e7ab112e8",
+    "schemas/solo-v1.schema.json": "8c9f4df46b385348bc7aed1524312e4e32733384b815667096252f2c14a4d537"
+  }
+}

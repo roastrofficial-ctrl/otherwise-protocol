@@ -1,0 +1,8 @@
+{
+  "python": "3.12.16 (main, Oct 28 2026, 02:07:42) [GCC 12.2.0]",
+  "sqlite": "3.40.1",
+  "pynacl": "1.6.2",
+  "cryptography": "46.0.3",
+  "python_openssl": "OpenSSL 3.5.4 30 Sep 2025",
+  "php": "8.2.35 / Sodium 1.0.18 / OpenSSL 3.0.22 25 Aug 2026"
+}

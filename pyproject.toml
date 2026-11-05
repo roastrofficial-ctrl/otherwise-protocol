@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools==80.9.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "otherwise-solo-reference"
+version = "0.1.0a1"
+readme = "README.md"
+description = "Synthetic-only standalone Otherwise Solo protocol reference"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+dependencies = ["cryptography==46.0.3", "PyNaCl==1.6.2"]
+
+[project.scripts]
+otherwise-solo = "otherwise_solo.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["reference/python"]
