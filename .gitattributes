@@ -1,0 +1,4 @@
+* text eol=lf
+# Keep portable fixtures and supplied upstream notices byte-for-byte.
+conformance/*.json -text
+third_party/** -text -whitespace

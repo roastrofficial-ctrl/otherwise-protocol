@@ -47,6 +47,8 @@ Tests ran in Linux arm64 containers on Docker Desktop 27.2.0. amd64 Debian depen
 2. A concurrent amd64/arm64 pull hit Docker Desktop's `cannot overwrite digest` image-store error. Resolving the immutable platform-specific amd64 digest allowed its dependency-lock preparation to complete. This was setup, not a conformance failure.
 3. The first audit pattern flagged its own certificate-detection string. Requiring a complete PEM certificate block removed that false positive without excluding source files from inspection. The re-run had no findings.
 
+4. Git whitespace checking reported trailing spaces in verbatim upstream licence files. The files were preserved byte-for-byte and `.gitattributes` scopes normalization/style checks appropriately; upstream notices were not edited.
+
 No preflight conformance test failed. These setup/audit failures are retained here rather than hidden. Later final-clone/packaging failures, if any, must be reported with their actual outcome before publication.
 
 ## Audit and licence scope
@@ -58,3 +60,7 @@ Required copyright attribution and public third-party licence contacts are inten
 ## Known limits
 
 The custodian can decrypt early, falsify recorded claims, fork, censor, refuse release or lose state. Signed evidence does not prove honesty. Capacity does not itself authorize release, but inability to renew can leave the existing lease eligible. There is no indefinite continuity, lost-key account reset, production vault, real delivery or production security review. Dependency pins do not guarantee permanent artifact availability or byte-identical OCI images. See RELEASE_NOTES.md and the threat model for the full declared boundary.
+
+## Executed independent-clone validation
+
+`./scripts/clean-check.sh main` was executed against candidate commit `17457b6`, using a fresh clone with Git hardlinks disabled and its origin removed. It rebuilt without Docker layer reuse, passed **37 Python methods in 41.938 seconds**, passed **88 PHP cases with zero disagreements**, and completed the new synthetic demo including independent PHP verification. The complete relevant output is retained in [clean-clone evidence](evidence/alpha/clean-clone.txt). Subsequent candidate edits are release documentation/attributes/evidence only; final-tag checks are also recorded in the handoff.

@@ -1,0 +1,19 @@
+{
+  "audit": "otherwise-alpha-offline-v1",
+  "findings": [],
+  "git_objects": {
+    "blob": 103,
+    "commit": 1,
+    "tag": 0
+  },
+  "intentional_fixture_private_fields": 8,
+  "intentional_public_data": [
+    "Levi Godolphin copyright attribution",
+    "GitHub noreply commit identity",
+    "published third-party licence attribution",
+    "explicitly labelled deterministic fixture keys"
+  ],
+  "limitations": "Pattern and structure review cannot prove absence of every possible secret; dependencies are separately inventoried.",
+  "scope": "all included worktree files and all local Git objects; no external credential validation",
+  "worktree_files": 108
+}

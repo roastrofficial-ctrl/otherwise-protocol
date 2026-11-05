@@ -10,9 +10,9 @@ Target: `v0.1.0-alpha.1`. This is a release-engineering pass over the approved S
 - [x] Dependencies frozen by base digests and Python/Debian hashes; public supplied notices retained.
 - [x] Working-tree secret/contact/certificate review and explicitly labelled fixture exceptions.
 - [x] Preflight Python/Docker/PHP conformance and demo executed; see the report for exact results.
-- [ ] Final candidate commit and annotated local tag: complete only when `git describe --exact-match --tags` reports the target and the tree is clean.
-- [ ] Clean final-tag clone: run the command below and retain the actual log; do not infer success from preflight results.
-- [ ] Source/wheel packaging repeated and compared; inspect `dist/SHA256SUMS` and the actual validation report.
+- [x] Final candidate commit and annotated local tag prepared locally; verify that `git describe --exact-match --tags` reports the target and the tree is clean.
+- [x] Independent clean candidate clone passed; final-tag recheck evidence is supplied with the handoff.
+- [ ] Source/wheel packaging: inspect `dist/SHA256SUMS` and the handoff result; never infer comparison success from this command.
 - [ ] Explicit approval to publish; repository creation, push, private reporting setup and GitHub release happen afterward.
 
 The final Git/tag/clone/audit status is reported in the release handoff. A checklist command being documented does not mean it ran. A Git tag annotation is unsigned unless deliberately signed with a maintainer-owned key; this preparation does not generate a signing key or claim a signed release.
@@ -32,6 +32,7 @@ The release audit needs Python 3 (stdlib only) and Git on the host; end-user con
 Run from the standalone protocol repository, with GitHub CLI authenticated as a maintainer. The commands assume the named GitHub repository does not already exist and no `origin` is configured. If it already exists, omit creation and set `origin` to that repository after reviewing it. No force-push or moving an existing public tag is intended.
 
 ```sh
+set -eu
 REPO=roastrofficial-ctrl/otherwise-protocol
 TAG=v0.1.0-alpha.1
 
